@@ -1,0 +1,10 @@
+# Top-level ML dependencies. Pinned versions live in requirements.txt
+# Regenerate: uv pip compile ml/requirements.in -o ml/requirements.txt --python-version 3.12
+numpy
+pandas
+scikit-learn
+matplotlib
+pyserial
+emlearn
+# emlearn imports distutils (removed in Python 3.12); setuptools provides it
+setuptools

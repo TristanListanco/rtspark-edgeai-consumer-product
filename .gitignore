@@ -1,0 +1,26 @@
+# PlatformIO
+.pio/
+compile_commands.json
+
+# VS Code (keep extensions.json)
+.vscode/*
+!.vscode/extensions.json
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Raw captures may contain participant info: commit only anonymized data
+data/raw/
+
+# Secrets (Wi-Fi credentials, API keys)
+.env
+include/secrets.h
+
+# Course handout (instructor copyright, not ours to redistribute)
+BCA182*.pdf
+
+# OS
+.DS_Store

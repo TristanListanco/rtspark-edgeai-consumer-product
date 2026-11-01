@@ -1,0 +1,35 @@
+{
+  "build": {
+    "core": "stm32",
+    "cpu": "cortex-m4",
+    "extra_flags": "-DSTM32F4 -DSTM32F407xx",
+    "f_cpu": "168000000L",
+    "mcu": "stm32f407zgt6",
+    "product_line": "STM32F407xx"
+  },
+  "connectivity": [
+    "can"
+  ],
+  "debug": {
+    "jlink_device": "STM32F407ZG",
+    "openocd_target": "stm32f4x",
+    "svd_path": "STM32F40x.svd"
+  },
+  "frameworks": [
+    "cmsis",
+    "stm32cube"
+  ],
+  "name": "RT-Thread RT-Spark (Spark-1, STM32F407ZGT6)",
+  "upload": {
+    "maximum_ram_size": 131072,
+    "maximum_size": 1048576,
+    "protocol": "stlink",
+    "protocols": [
+      "stlink",
+      "cmsis-dap",
+      "jlink"
+    ]
+  },
+  "url": "https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f407-rt-spark",
+  "vendor": "RT-Thread"
+}
