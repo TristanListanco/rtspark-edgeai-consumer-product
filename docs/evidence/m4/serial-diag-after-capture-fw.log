@@ -1,0 +1,38 @@
+[     6.710] selftest: LED matrix all green
+diag
+[     7.210] selftest: LED matrix all blue
+[     7.710] selftest: done
+[     8.026] ==== diagnostics: 19 checks, 17 PASS, 0 FAIL ====
+[     8.026]   CLOCK     PASS     SYSCLK 168 MHz from HSE 8 MHz
+[     8.026]   RTOS      PASS     11 tasks, heap min 33760 B, stack min 75% (monitor)
+[     8.026]   IMU       PASS     ICM20608 id 0xaf, 30 smp/0.3s, err 0
+[     8.026]   LIGHT     PASS     AP3216C 7.32 lx ps 7, err 0
+[     8.026]   ENV       PASS     AHT20/21 35.35 C 60.52 %RH, age 3s
+[     8.026]   LCD       PASS     ST7789V3 id 81 b3, FSMC NE3 (visual)
+[     8.026]   LEDMATRIX PASS     19x WS2812, 5 DMA frames (visual)
+[     8.026]   BUZZER    PASS     PB0 TIM8_CH2N 2700 Hz running (audible)
+[     8.027]   KEYS      PASS     4 keys active-low, 0 events
+[     8.027]   LEDS      PASS     LED_R PF12 run, LED_G PF11 heartbeat
+[     8.027]   RTC       PASS     LSE, 2026-11-01 16:28:48
+[     8.027]   SPIFLASH  PASS     W25Q64 8 MB, JEDEC ef4017
+[     8.027]   MICROSD   ABSENT   no card (init err 0x4)
+[     8.027]   EEPROM    ABSENT   not fitted: PB8/PB9 carry the CAN transceiver
+[     8.027]   AUDIO     PASS     ES8388 codec ACK 0x10 on i2c2 (not used)
+[     8.027]   CONSOLE   PASS     USART1 115200 8N1 via ST-LINK VCP
+[     8.027]   WIFI      PASS     RW007 SPI magic ok, boot 670 ms (held in reset)
+[     8.027]   CAN       PASS     PB8/PB9: transceiver echoes TX; no other node on the bu
+[     8.027]   RS485     PASS     transceiver RO on PG9 (USART6_RX)
+stats
+[     8.384] heap: free 35912 B, min-ever free 33760 B, total 65536 B; uptime 8 s
+[     8.384]   task       st prio  stack peak/alloc (B)  min-free   cpu
+[     8.384]   IDLE       R     0     104 / 508           79 %   62.23 %
+[     8.384]   Tmr Svc    B     6     112 / 1020          89 %    0.00 %
+[     8.385]   capture    B     2     280 / 2044          86 %    0.00 %
+[     8.385]   sensor     B     4     388 / 2044          81 %    2.26 %
+[     8.385]   env        B     2     220 / 1532          85 %    0.01 %
+[     8.385]   monitor    B     1     504 / 2044          75 %    0.00 %
+[     8.385]   heartbeat  B     1     104 / 508           79 %    0.00 %
+[     8.385]   ui         B     2     884 / 4092          78 %    0.64 %
+[     8.385]   cli        X     1     612 / 4092          85 %    0.00 %
+[     8.385]   buzzer     B     2     152 / 636           76 %    0.00 %
+[     8.385]   keys       B     3     192 / 1020          81 %    0.00 %

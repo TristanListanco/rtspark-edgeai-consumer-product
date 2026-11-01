@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 #include "FreeRTOS.h"
+#include "capture.h"
 #include "console.h"
 #include "diag.h"
 #include "drivers/buzzer.h"
@@ -92,6 +93,9 @@ static void draw_values(void)
     line(8, COLOR_WHITE, " %s C  %s %%RH", fx(t, 16, s.temp_centi, 100, 2), fx(h, 16, s.rh_centi, 100, 2));
     line(10, COLOR_YELLOW, "KEY   %s", last_key);
     line(11, COLOR_GRAY, "up %lu s  heap %u B", HAL_GetTick() / 1000U, (unsigned)xPortGetFreeHeapSize());
+    char cap[COLS + 1];
+    capture_status(cap, sizeof cap);
+    line(12, COLOR_RED, "%s", cap);
 }
 
 static void self_test(void)

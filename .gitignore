@@ -13,7 +13,7 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# Raw captures may contain participant info: commit only anonymized data
+# Scratch captures; the anonymised dataset in data/sessions/ IS committed
 data/raw/
 
 # Secrets (Wi-Fi credentials, API keys)

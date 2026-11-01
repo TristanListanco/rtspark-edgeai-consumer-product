@@ -1,0 +1,33 @@
+{
+  "session": "20261101-162853-CARRIED-P00",
+  "label": "CARRIED",
+  "participant": "P00",
+  "started": "2026-11-01T16:28:53",
+  "location": "",
+  "lighting": "",
+  "surface": "",
+  "power": "usb",
+  "trial_seconds": 10,
+  "split": "train",
+  "trials": [
+    {
+      "trial": 1,
+      "samples": 1000,
+      "dropped": 0,
+      "seq_gaps": 0,
+      "imu_errors": 0,
+      "light_errors": 0
+    }
+  ],
+  "trials_redone": 0,
+  "board_header": {
+    "fw": "m3-diagnostics-dirty",
+    "rate_hz": "100",
+    "acc_lsb_per_g": "4096",
+    "gyr_lsb_per_dps_x10": "328",
+    "als_lux_per_count_x10000": "788",
+    "rtc": "2026-11-01 16:28:53",
+    "env_temp_centi": "3528"
+  },
+  "notes": "bench test"
+}

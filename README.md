@@ -2,7 +2,7 @@
 
 BCA182 Embedded Systems Programming, Laboratory Activity No. 4 (MSU-IIT).
 
-> **Status:** M0–M3 done. Concept: **KeepSafe Box** ([docs/01-concept.md](docs/01-concept.md)). FreeRTOS bring-up: [docs/02-bringup-freertos.md](docs/02-bringup-freertos.md). Verified hardware + diagnostics: [docs/02-hardware-inventory.md](docs/02-hardware-inventory.md). Next: M4 dataset capture.
+> **Status:** M0–M3 done; M4 capture tooling done, dataset recording in progress ([data/PROTOCOL.md](data/PROTOCOL.md)). Concept: **KeepSafe Box** ([docs/01-concept.md](docs/01-concept.md)). FreeRTOS bring-up: [docs/02-bringup-freertos.md](docs/02-bringup-freertos.md). Verified hardware + diagnostics: [docs/02-hardware-inventory.md](docs/02-hardware-inventory.md). Next: M4 dataset capture.
 > See [PLAN.md](PLAN.md) for milestones.
 
 This is an original consumer product on the RT-Thread **RT-Spark (STM32F407ZGT6)** board. It reads onboard sensors, runs a trained ML model **on the microcontroller**, and responds to the user locally, with no Internet connection required.
@@ -56,6 +56,16 @@ Scripted evidence capture (types commands for you):
 
 ```sh
 .venv/bin/python scripts/serial_capture.py --port <VCP port> --seconds 40 --out log.txt --send diag --send stats
+```
+
+## Recording the dataset
+
+Follow [data/PROTOCOL.md](data/PROTOCOL.md). One command per session; the board beeps the countdown:
+
+```sh
+.venv/bin/python ml/capture.py --port <VCP port> --label OPENED --split train --participant P01 \
+    --location bedroom --lighting dark --surface desk --trials 5
+.venv/bin/python ml/dataset_status.py     # progress vs. the 30/10-window minimums
 ```
 
 ## ML environment

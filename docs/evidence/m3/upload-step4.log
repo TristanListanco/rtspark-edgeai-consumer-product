@@ -1,6 +1,7 @@
 Processing rt_spark (platform: ststm32@20.0.0; framework: stm32cube; board: rt_spark)
 --------------------------------------------------------------------------------
 Verbose mode can be enabled via `-v, --verbose` option
+Firmware version: m3-diagnostics-dirty
 CONFIGURATION: https://docs.platformio.org/page/boards/ststm32/rt_spark.html
 PLATFORM: ST STM32 (20.0.0) > RT-Thread RT-Spark (Spark-1, STM32F407ZGT6)
 HARDWARE: STM32F407ZGT6 168MHz, 128KB RAM, 1MB Flash
@@ -23,8 +24,8 @@ Dependency Graph
 Building in release mode
 Checking size .pio/build/rt_spark/firmware.elf
 Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
-RAM:   [====      ]  43.1% (used 56536 bytes from 131072 bytes)
-Flash: [=         ]   6.6% (used 68740 bytes from 1048576 bytes)
+RAM:   [======    ]  55.9% (used 73264 bytes from 131072 bytes)
+Flash: [=         ]   6.8% (used 71404 bytes from 1048576 bytes)
 Configuring upload protocol...
 AVAILABLE: cmsis-dap, jlink, stlink
 CURRENT: upload_protocol = stlink
@@ -34,11 +35,11 @@ Licensed under GNU GPL v2
 For bug reports, read
 	http://openocd.org/doc/doxygen/bugs.html
 [stm32f4x.cpu] halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x0800e6dc msp: 0x20020000
+xPSR: 0x01000000 pc: 0x0800ef34 msp: 0x20020000
 ** Programming Started **
 ** Programming Finished **
 ** Verify Started **
 ** Verified OK **
 ** Resetting Target **
 shutdown command invoked
-========================= [SUCCESS] Took 5.21 seconds =========================
+========================= [SUCCESS] Took 5.44 seconds =========================

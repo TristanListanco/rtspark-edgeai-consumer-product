@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "FreeRTOS.h"
+#include "capture.h"
 #include "console.h"
 #include "cycles.h"
 #include "semphr.h"
@@ -149,7 +150,12 @@ static void sensor_task(void *arg)
                 if (imu_saturated(&raw)) snap.imu_saturated++;
                 snap.imu_health = stuck ? SENSOR_STUCK : SENSOR_OK;
             }
+            uint32_t seq = snap.imu_samples, t_ms = HAL_GetTick();
             xSemaphoreGive(snap_lock);
+            if (capture_active()) {
+                if (st == I2C_OK) capture_push_imu(seq, t_ms, &raw);
+                else capture_push_error(t_ms, true);
+            }
             have_prev = true;
         }
 
@@ -169,6 +175,10 @@ static void sensor_task(void *arg)
                 snap.light_health = SENSOR_OK;
             }
             xSemaphoreGive(snap_lock);
+            if (capture_active()) {
+                if (st == I2C_OK) capture_push_light(HAL_GetTick(), &r);
+                else capture_push_error(HAL_GetTick(), false);
+            }
         }
     }
 }

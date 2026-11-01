@@ -11,6 +11,7 @@
 #include <string.h>
 
 #include "FreeRTOS.h"
+#include "capture.h"
 #include "console.h"
 #include "diag.h"
 #include "drivers/buzzer.h"
@@ -182,6 +183,25 @@ static void cmd_ioprobe(int argc, char **argv)
     console_printf("rs485: PC7 %s, PG9 %s -> %s", io_line_str(r.pc7), io_line_str(r.pg9), r.verdict);
 }
 
+/* cap start <LABEL> <SESSION> | cap trial <n> <seconds> | cap stop | cap */
+static void cmd_cap(int argc, char **argv)
+{
+    unsigned n, secs;
+    if (argc == 4 && strcmp(argv[1], "start") == 0) {
+        if (!capture_session_start(argv[2], argv[3])) console_printf("cap: cannot start (busy or name too long)");
+    } else if (argc == 4 && strcmp(argv[1], "trial") == 0 && parse_uint(argv[2], &n, 999) &&
+               parse_uint(argv[3], &secs, 60)) {
+        if (!capture_trial(n, secs)) console_printf("cap: no open session, or bad duration (1-60 s)");
+    } else if (argc == 2 && strcmp(argv[1], "stop") == 0) {
+        capture_session_stop();
+    } else {
+        char st[40];
+        capture_status(st, sizeof st);
+        console_printf("cap: %s | usage: cap start <LABEL> <SESSION> | cap trial <n> <s> | cap stop",
+                       st[0] ? st : "idle");
+    }
+}
+
 static void cmd_beep(int argc, char **argv)
 {
     unsigned ms = 200;
@@ -214,6 +234,7 @@ static const struct {
     {"sd", cmd_sd, "re-detect the microSD card (read-only)"},
     {"calib", cmd_calib, "IMU offsets and noise at rest (2 s)"},
     {"ioprobe", cmd_ioprobe, "re-probe Wi-Fi, CAN and RS485"},
+    {"cap", cmd_cap, "dataset capture (driven by ml/capture.py)"},
     {"beep", cmd_beep, "beep [ms]"},
     {"reboot", cmd_reboot, "software reset"},
 };

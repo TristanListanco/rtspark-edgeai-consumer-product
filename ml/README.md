@@ -1,5 +1,10 @@
 # ml/
 
+| Script | Purpose |
+|---|---|
+| `capture.py` | record one labeled session from the board (see `data/PROTOCOL.md`) |
+| `dataset_status.py` | count sessions / independent windows per class and split vs. the lab minimums |
+
 Python 3.12 pipeline: capture, features, baseline, training, export to C.
 
 ```sh

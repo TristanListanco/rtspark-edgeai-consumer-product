@@ -34,8 +34,8 @@ static void boot_report(clock_source_t clk)
     uint32_t csr = RCC->CSR;
     __HAL_RCC_CLEAR_RESET_FLAGS();
 
-    console_printf("==== KeepSafe Box / RT-Spark (M3 drivers) ====");
-    console_printf("build: %s %s, gcc %s", __DATE__, __TIME__, __VERSION__);
+    console_printf("==== KeepSafe Box / RT-Spark ====");
+    console_printf("firmware %s, built %s %s, gcc %s", FW_VERSION, __DATE__, __TIME__, __VERSION__);
     console_printf("stack: STM32CubeF4 HAL v%lu.%lu.%lu, FreeRTOS %s", hal >> 24, (hal >> 16) & 0xFFU,
                    (hal >> 8) & 0xFFU, tskKERNEL_VERSION_NUMBER);
     console_printf("reset cause: %s (RCC_CSR=0x%08lx)", reset_cause(csr), csr);

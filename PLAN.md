@@ -163,21 +163,21 @@ docs/                          # report, diagrams, test plan, evidence/ (logs, p
 
 ---
 
-## M4: Capture firmware + labeled dataset (Weeks 2–3)
+## M4: Capture firmware + labeled dataset (Weeks 2–3) · tooling ✅ 2026-11-01 (`m4-capture-tools`); **recording in progress**
 
 **Do**
-- [ ] Write the **capture protocol** (`data/PROTOCOL.md`):
+- [x] Write the **capture protocol** (`data/PROTOCOL.md`):
   - sampling rates (e.g., IMU 100 Hz, light/proximity 10 Hz, AHT10 1 Hz)
   - window length and hop (e.g., 2 s / 1 s)
   - units
   - label definitions
   - variation plan: different people, surfaces, orientations, rooms, times of day
-- [ ] Add a **capture mode** to the firmware. A button or serial command starts and stops a labeled recording, which streams CSV over UART and/or logs to SD, with session ID, label, timestamp, and sequence counter. A host script `ml/capture.py` saves one file per session.
+- [x] Add a **capture mode** to the firmware. A button or serial command starts and stops a labeled recording, which streams CSV over UART and/or logs to SD, with session ID, label, timestamp, and sequence counter. A host script `ml/capture.py` saves one file per session. *(Done: serial streaming via DMA console, beep-guided trials, 1000/1000 samples per 10 s trial, 0 drops in bench tests. SD logging not built: no card in the kit.)*
 - [ ] **Watch the USB cable.** A taut cable distorts IMU data. Use a power bank with SD logging, or a long slack cable, and keep that setup the same for data capture and real use.
-- [ ] **Volume:** per class, ≥30 training windows and ≥10 held-out test windows, each from **separate recording sessions**. Aim for about 50 + 15 so exclusions don't drop you below the minimum.
+- [ ] **YOU:** record sessions A, B, C (+ C2 dark for OPENED) and D (test) from `data/PROTOCOL.md` §5. **Volume:** per class, ≥30 training windows and ≥10 held-out test windows, each from **separate recording sessions**. Aim for about 50 + 15 so exclusions don't drop you below the minimum.
 - [ ] Do **not** record the M7 system-test trials yet. They must come after the model is frozen.
 - [ ] Clean the data: drop invalid reads (error flags, saturation, stuck values) and record every exclusion in `data/EXCLUSIONS.md`.
-- [ ] Write `data/manifest.csv` with columns: file, session, label, anonymized participant ID, date, location, rates, split, notes.
+- [x] Write `data/manifest.csv` with columns: file, session, label, anonymized participant ID, date, location, rates, split, notes. *(`ml/capture.py` appends rows automatically; `ml/dataset_status.py` checks the counts.)*
 
 **Done when:** the dataset is frozen and the **session-level train/test split** is decided and committed *before* any training. Tag `m4-dataset`.
 

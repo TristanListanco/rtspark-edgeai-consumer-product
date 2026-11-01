@@ -20,6 +20,8 @@ void console_lock(void);
 void console_unlock(void);
 void console_write(const char *text);
 void console_write_n(const char *buf, unsigned len);
+/* Bytes dropped because the TX buffer stayed full for 200 ms (diagnostics). */
+uint32_t console_tx_dropped(void);
 
 /* Fault path: no RTOS, no mutex, polled output. Safe with interrupts disabled. */
 void console_panic(const char *fmt, ...) __attribute__((format(printf, 1, 2)));

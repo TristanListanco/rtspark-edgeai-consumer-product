@@ -7,6 +7,7 @@
 #include "app.h"
 
 #include "FreeRTOS.h"
+#include "capture.h"
 #include "cli.h"
 #include "console.h"
 #include "drivers/rtc.h"
@@ -63,6 +64,7 @@ static void init_task(void *arg)
     sensors_init();
     storage_init();
     io_probes();
+    capture_start();
     sensors_start();
     monitor_start();
     ui_start();

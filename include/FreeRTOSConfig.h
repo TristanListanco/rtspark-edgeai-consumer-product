@@ -45,7 +45,7 @@ uint64_t rtos_stats_timer_value(void);
 #define configSUPPORT_DYNAMIC_ALLOCATION        1
 /* heap_4 array lives in main SRAM (DMA-capable). Tune from measured
  * xPortGetMinimumEverFreeHeapSize() in M6/M7. */
-#define configTOTAL_HEAP_SIZE                   ((size_t)(48 * 1024))
+#define configTOTAL_HEAP_SIZE                   ((size_t)(64 * 1024))
 #define configAPPLICATION_ALLOCATED_HEAP        0
 
 /* ---- Hooks and safety nets --------------------------------------------- */
