@@ -1,0 +1,21 @@
+.pio/build/rt_spark/firmware.elf  :
+section              size        addr
+.isr_vector           392   134217728
+.text               17344   134218128
+.rodata              1604   134235472
+.ARM.extab              0   134237076
+.ARM                    8   134237076
+.preinit_array          0   134237084
+.init_array             4   134237084
+.fini_array             4   134237088
+.data                  96   536870912
+.ccmram                 0   268435456
+.bss                51108   536871008
+._user_heap_stack    1540   536922116
+.ARM.attributes        48           0
+.comment               69           0
+.debug_frame         1676           0
+.debug_line_str       456           0
+Total               74349
+
+

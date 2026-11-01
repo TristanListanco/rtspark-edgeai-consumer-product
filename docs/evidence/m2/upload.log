@@ -1,0 +1,44 @@
+Processing rt_spark (platform: ststm32@20.0.0; framework: stm32cube; board: rt_spark)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/ststm32/rt_spark.html
+PLATFORM: ST STM32 (20.0.0) > RT-Thread RT-Spark (Spark-1, STM32F407ZGT6)
+HARDWARE: STM32F407ZGT6 168MHz, 128KB RAM, 1MB Flash
+DEBUG: Current (stlink) External (cmsis-dap, jlink, stlink)
+PACKAGES: 
+ - framework-stm32cubef4 @ 1.28.3 
+ - tool-dfuutil @ 1.11.241029 
+ - tool-dfuutil-arduino @ 1.11.0 
+ - tool-ldscripts-ststm32 @ 0.3.0 
+ - tool-openocd @ 3.1200.7 (12.0) 
+ - tool-stm32duino @ 1.0.1 
+ - tool-stm32flash @ 0.7.0 
+ - toolchain-gccarmnoneeabi @ 1.140201.0 (14.2.1)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain+, Compatibility ~ soft
+Found 60 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- FreeRTOS-Kernel @ 11.3.2
+Building in release mode
+Checking size .pio/build/rt_spark/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [====      ]  39.1% (used 51204 bytes from 131072 bytes)
+Flash: [          ]   1.8% (used 19044 bytes from 1048576 bytes)
+Configuring upload protocol...
+AVAILABLE: cmsis-dap, jlink, stlink
+CURRENT: upload_protocol = stlink
+Uploading .pio/build/rt_spark/firmware.elf
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:45)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080044d0 msp: 0x20020000
+** Programming Started **
+** Programming Finished **
+** Verify Started **
+** Verified OK **
+** Resetting Target **
+shutdown command invoked
+========================= [SUCCESS] Took 2.32 seconds =========================

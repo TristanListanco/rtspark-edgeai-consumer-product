@@ -55,7 +55,7 @@ The handout requires the problem paragraph, **at least two alternatives**, and a
 
 **Do**
 - [x] Create a **public** GitHub repo with README skeleton, LICENSE, and a `.gitignore` that covers `.pio/`, Python venvs, and any raw data containing personal info.
-- [x] Install VS Code, PlatformIO, and the `ststm32` platform (`ststm32@20.0.0`, STM32CubeF4 1.28.3, GCC 14.2.1). The custom `boards/rt_spark.json` builds a HAL blink smoke test.
+- [x] Install VS Code, PlatformIO, and the `ststm32` platform (`ststm32@20.0.0`, STM32CubeF4 1.28.3). *Correction found in M2: the M0 build actually used the platform's default GCC 7.2.1; GCC 14.2.1 is pinned since M2.* The custom `boards/rt_spark.json` builds a HAL blink smoke test.
 - [ ] *(Optional)* Install STM32CubeMX, only to generate or review init code.
 - [x] Set up the Python env (Python 3.12 `.venv`, pinned in `ml/requirements.txt`). The sklearn → emlearn → Cortex-M4 C export is smoke-tested.
 - [x] List references in `docs/references.md`. RT-Thread BSP facts are captured in `docs/hardware-notes.md` (unverified).
@@ -97,13 +97,13 @@ docs/                          # report, diagrams, test plan, evidence/ (logs, p
 
 ---
 
-## M2: Bring-up with PlatformIO + HAL + FreeRTOS (Weeks 1–2)
+## M2: Bring-up with PlatformIO + HAL + FreeRTOS (Weeks 1–2) ✅ done 2026-11-01: see `docs/02-bringup-freertos.md`
 
 **Do**
-- [ ] **Physical inventory:** record board revision, photos, fitted modules, and which connectors are empty. A connector is not a sensor.
-- [ ] **Board manifest** `boards/rt_spark.json`: start from a generic F407 manifest, then set the MCU (`stm32f407zgt6`, 168 MHz) and flash (1 MB). Set RAM to the **128 KB main SRAM** and treat the 64 KB **CCM RAM** separately, because DMA cannot reach it. Also set the linker script and upload/debug protocol.
-- [ ] **Clocks:** read the HSE crystal value from the schematic, set `HSE_VALUE`, configure the PLL for 168 MHz, and enable LSE for the RTC.
-- [ ] **Upload/debug:** check which probe your board actually has (onboard or external ST-LINK via SWD), then set `upload_protocol` and `debug_tool` to match.
+- [ ] *(Moved to M3, needs you at the board)* **Physical inventory:** record board revision, photos, fitted modules, and which connectors are empty. A connector is not a sensor.
+- [x] **Board manifest** `boards/rt_spark.json`: start from a generic F407 manifest, then set the MCU (`stm32f407zgt6`, 168 MHz) and flash (1 MB). Set RAM to the **128 KB main SRAM** and treat the 64 KB **CCM RAM** separately, because DMA cannot reach it. Also set the linker script and upload/debug protocol.
+- [x] **Clocks:** `HSE_VALUE` = 8 MHz (BSP, confirmed by a working PLL and UART baud), PLL at 168 MHz. *LSE for the RTC moves to M3 with the RTC driver.*
+- [x] **Upload/debug:** check which probe your board actually has (onboard or external ST-LINK via SWD), then set `upload_protocol` and `debug_tool` to match.
 
   ```ini
   [env:rt_spark]
@@ -115,15 +115,15 @@ docs/                          # report, diagrams, test plan, evidence/ (logs, p
   monitor_speed = 115200
   board_build.stm32cube.custom_config_header = yes
   ```
-- [ ] **FreeRTOS integration.** This is the most common place to get stuck.
+- [x] **FreeRTOS integration.** This is the most common place to get stuck.
   - Add a pinned FreeRTOS-Kernel version: core, `portable/GCC/ARM_CM4F`, and `heap_4.c`.
   - Map `vPortSVCHandler` → `SVC_Handler` and `xPortPendSVHandler` → `PendSV_Handler`, and give SysTick to FreeRTOS. Avoid duplicate handlers.
   - Move the **HAL timebase to TIM6/TIM7** (`stm32f4xx_hal_timebase_tim.c`) so HAL and FreeRTOS don't fight over SysTick.
   - Set `NVIC_PRIORITYGROUP_4` and a consistent `configMAX_SYSCALL_INTERRUPT_PRIORITY`. Any ISR that calls `...FromISR` must have a numerically higher (lower urgency) priority than that value.
   - Enable the FPU with hard-float flags that are consistent at compile and link time.
   - Turn on the safety nets: `configASSERT`, `configCHECK_FOR_STACK_OVERFLOW = 2`, `configUSE_MALLOC_FAILED_HOOK = 1`, run-time stats, and trace facility.
-- [ ] **Console:** UART with `printf` retarget, protected by a mutex so lines from different tasks don't interleave. Timestamp every line.
-- [ ] **Heartbeat demo:** run 2–3 tasks (LED blink, tick logger) to prove the scheduler starts.
+- [x] **Console:** UART with `printf` retarget, protected by a mutex so lines from different tasks don't interleave. Timestamp every line.
+- [x] **Heartbeat demo:** run 2–3 tasks (LED blink, tick logger) to prove the scheduler starts.
 
 **Evidence:** `platformio.ini`, `pio run` build log, upload log, and the first serial log with scheduler startup. Save them in `docs/evidence/m2/`.
 **Done when:** a fresh clone builds and uploads with one command and the serial log shows multiple tasks running. Tag `m2-bringup`.

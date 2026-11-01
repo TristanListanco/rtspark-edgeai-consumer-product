@@ -1,0 +1,125 @@
+[     3.048] probe #2: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[     0.001] ==== KeepSafe Box / RT-Spark bring-up (M2) ====
+[     0.006] build: Nov  1 2026 15:20:35, gcc 14.2.1 20241119
+[     0.011] stack: STM32CubeF4 HAL v1.8.5, FreeRTOS V11.3.2
+[     0.017] reset cause: software (debugger/NVIC) (RCC_CSR=0x14000000)
+[     0.023] clock: HSE 8 MHz -> PLL, SYSCLK 168000000 Hz, HCLK 168000000 Hz, PCLK1 42000000 Hz, PCLK2 84000000 Hz
+[     0.033] FPU: CPACR=0x00f00000 (0x00F00000 = CP10/CP11 full access)
+[     0.040] FreeRTOS heap 49152 B, tick 1000 Hz, max syscall IRQ prio 5
+[     0.046] starting scheduler (44928 B heap free)
+[     1.047] probe #0: 100 wake-ups, period min/mean/max = 9994/9999/10000 us, overruns 0
+[     2.047] probe #1: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[     3.047] probe #2: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[     4.047] probe #3: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[     5.047] probe #4: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[     6.047] probe #5: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[     7.047] probe #6: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[     8.047] probe #7: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[     9.047] probe #8: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    10.047] probe #9: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    10.055] probe since boot: 10 reports, period min 9994 us, max 10000 us, overruns 0
+[    10.063] heap: free 42904 B, min-ever free 42904 B, total 49152 B; uptime 10 s
+[    10.070]   task       st prio  stack peak/alloc (B)  min-free   cpu
+[    10.077]   probe      B     4     152 / 1020          85 %    0.05 %
+[    10.083]   monitor    X     2     628 / 2044          69 %    0.87 %
+[    10.090]   heartbeat  R     1     104 / 508           79 %    0.00 %
+[    10.096]   IDLE       R     0     104 / 508           79 %   99.07 %
+[    10.103]   Tmr Svc    B     6     112 / 1020          89 %    0.00 %
+[    11.047] probe #10: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    12.047] probe #11: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    13.047] probe #12: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    14.047] probe #13: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    15.047] probe #14: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    16.047] probe #15: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    17.047] probe #16: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    18.047] probe #17: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    19.047] probe #18: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    20.047] probe #19: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    20.055] probe since boot: 20 reports, period min 9994 us, max 10000 us, overruns 0
+[    20.063] heap: free 42904 B, min-ever free 42904 B, total 49152 B; uptime 20 s
+[    20.071]   task       st prio  stack peak/alloc (B)  min-free   cpu
+[    20.077]   probe      B     4     152 / 1020          85 %    0.05 %
+[    20.083]   monitor    X     2     628 / 2044          69 %    1.10 %
+[    20.090]   heartbeat  R     1     104 / 508           79 %    0.00 %
+[    20.096]   IDLE       R     0     104 / 508           79 %   98.83 %
+[    20.103]   Tmr Svc    B     6     112 / 1020          89 %    0.00 %
+[    21.047] probe #20: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    22.047] probe #21: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    23.047] probe #22: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    24.047] probe #23: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    25.047] probe #24: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    26.047] probe #25: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    27.047] probe #26: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    28.047] probe #27: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    29.047] probe #28: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    30.047] probe #29: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    30.055] probe since boot: 30 reports, period min 9994 us, max 10000 us, overruns 0
+[    30.063] heap: free 42904 B, min-ever free 42904 B, total 49152 B; uptime 30 s
+[    30.071]   task       st prio  stack peak/alloc (B)  min-free   cpu
+[    30.077]   probe      B     4     152 / 1020          85 %    0.05 %
+[    30.083]   monitor    X     2     628 / 2044          69 %    1.18 %
+[    30.090]   heartbeat  R     1     104 / 508           79 %    0.00 %
+[    30.096]   IDLE       R     0     104 / 508           79 %   98.75 %
+[    30.103]   Tmr Svc    B     6     112 / 1020          89 %    0.00 %
+[    31.047] probe #30: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    32.047] probe #31: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    33.047] probe #32: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    34.047] probe #33: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    35.047] probe #34: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    36.047] probe #35: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    37.047] probe #36: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    38.047] probe #37: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    39.047] probe #38: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    40.047] probe #39: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    40.055] probe since boot: 40 reports, period min 9994 us, max 10000 us, overruns 0
+[    40.063] heap: free 42904 B, min-ever free 42904 B, total 49152 B; uptime 40 s
+[    40.071]   task       st prio  stack peak/alloc (B)  min-free   cpu
+[    40.077]   probe      B     4     152 / 1020          85 %    0.05 %
+[    40.083]   monitor    X     2     652 / 2044          68 %    1.22 %
+[    40.090]   heartbeat  R     1     104 / 508           79 %    0.00 %
+[    40.096]   IDLE       R     0     104 / 508           79 %   98.71 %
+[    40.103]   Tmr Svc    B     6     112 / 1020          89 %    0.00 %
+[    41.047] probe #40: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    42.047] probe #41: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    43.047] probe #42: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    44.047] probe #43: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    45.047] probe #44: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    46.047] probe #45: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    47.047] probe #46: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    48.047] probe #47: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    49.047] probe #48: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    50.047] probe #49: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    50.055] probe since boot: 50 reports, period min 9994 us, max 10000 us, overruns 0
+[    50.063] heap: free 42904 B, min-ever free 42904 B, total 49152 B; uptime 50 s
+[    50.071]   task       st prio  stack peak/alloc (B)  min-free   cpu
+[    50.077]   probe      B     4     152 / 1020          85 %    0.05 %
+[    50.083]   monitor    X     2     652 / 2044          68 %    1.25 %
+[    50.090]   heartbeat  R     1     104 / 508           79 %    0.00 %
+[    50.096]   IDLE       R     0     104 / 508           79 %   98.69 %
+[    50.103]   Tmr Svc    B     6     112 / 1020          89 %    0.00 %
+[    51.047] probe #50: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    52.047] probe #51: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    53.047] probe #52: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    54.047] probe #53: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    55.047] probe #54: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    56.047] probe #55: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    57.047] probe #56: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    58.047] probe #57: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    59.047] probe #58: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    60.047] probe #59: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    60.055] probe since boot: 60 reports, period min 9994 us, max 10000 us, overruns 0
+[    60.063] heap: free 42904 B, min-ever free 42904 B, total 49152 B; uptime 60 s
+[    60.071]   task       st prio  stack peak/alloc (B)  min-free   cpu
+[    60.077]   probe      B     4     152 / 1020          85 %    0.05 %
+[    60.083]   monitor    X     2     652 / 2044          68 %    1.26 %
+[    60.090]   heartbeat  R     1     104 / 508           79 %    0.00 %
+[    60.096]   IDLE       R     0     104 / 508           79 %   98.68 %
+[    60.103]   Tmr Svc    B     6     112 / 1020          89 %    0.00 %
+[    61.047] probe #60: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    62.047] probe #61: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    63.047] probe #62: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    64.047] probe #63: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    65.047] probe #64: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    66.047] probe #65: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    67.047] probe #66: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0
+[    68.047] probe #67: 100 wake-ups, period min/mean/max = 9999/9999/10000 us, overruns 0

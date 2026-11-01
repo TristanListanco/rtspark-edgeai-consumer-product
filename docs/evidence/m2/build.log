@@ -1,0 +1,43 @@
+Processing rt_spark (platform: ststm32@20.0.0; framework: stm32cube; board: rt_spark)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/ststm32/rt_spark.html
+PLATFORM: ST STM32 (20.0.0) > RT-Thread RT-Spark (Spark-1, STM32F407ZGT6)
+HARDWARE: STM32F407ZGT6 168MHz, 128KB RAM, 1MB Flash
+DEBUG: Current (stlink) External (cmsis-dap, jlink, stlink)
+PACKAGES: 
+ - framework-stm32cubef4 @ 1.28.3 
+ - tool-ldscripts-ststm32 @ 0.3.0 
+ - toolchain-gccarmnoneeabi @ 1.140201.0 (14.2.1)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain+, Compatibility ~ soft
+Found 60 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- FreeRTOS-Kernel @ 11.3.2
+Building in release mode
+Compiling .pio/build/rt_spark/src/app/bringup_tasks.o
+Compiling .pio/build/rt_spark/src/app/console.o
+Compiling .pio/build/rt_spark/src/main.o
+Compiling .pio/build/rt_spark/src/system/rtos_hooks.o
+Compiling .pio/build/rt_spark/lib0ea/FreeRTOS/event_groups.o
+Compiling .pio/build/rt_spark/lib0ea/FreeRTOS/list.o
+Compiling .pio/build/rt_spark/lib0ea/FreeRTOS/portable/GCC/ARM_CM4F/port.o
+Compiling .pio/build/rt_spark/lib0ea/FreeRTOS/portable/MemMang/heap_4.o
+Compiling .pio/build/rt_spark/lib0ea/FreeRTOS/queue.o
+Compiling .pio/build/rt_spark/lib0ea/FreeRTOS/stream_buffer.o
+Compiling .pio/build/rt_spark/lib0ea/FreeRTOS/tasks.o
+Compiling .pio/build/rt_spark/lib0ea/FreeRTOS/timers.o
+Archiving .pio/build/rt_spark/lib0ea/libFreeRTOS.a
+Indexing .pio/build/rt_spark/lib0ea/libFreeRTOS.a
+Linking .pio/build/rt_spark/firmware.elf
+Memory region         Used Size  Region Size  %age Used
+          CCMRAM:           0 B        64 KB      0.00%
+             RAM:       52744 B       128 KB     40.24%
+           FLASH:       19460 B         1 MB      1.86%
+Checking size .pio/build/rt_spark/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [====      ]  39.1% (used 51204 bytes from 131072 bytes)
+Flash: [          ]   1.8% (used 19044 bytes from 1048576 bytes)
+Building .pio/build/rt_spark/firmware.bin
+========================= [SUCCESS] Took 1.16 seconds =========================

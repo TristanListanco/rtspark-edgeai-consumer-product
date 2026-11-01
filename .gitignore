@@ -1,6 +1,7 @@
 # PlatformIO
 .pio/
 compile_commands.json
+.cache/
 
 # VS Code (keep extensions.json)
 .vscode/*

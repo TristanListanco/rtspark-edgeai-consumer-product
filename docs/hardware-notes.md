@@ -6,6 +6,16 @@
 Check each one against the schematic and the physical board in M2/M3, then move it into
 `docs/02-hardware-inventory.md` with its verified status.
 
+## Verified on hardware in M2 (2026-11-01)
+
+| Fact | How verified |
+|---|---|
+| Onboard debug probe is an **ST-LINK V2-1** (USB `0483:374B`) with a virtual COM port | `pio device list`; SWD flash + verify OK |
+| Console = USART1 PA9/PA10 bridged by the ST-LINK VCP, 115200 8N1 | Boot log readable |
+| HSE crystal is **8 MHz**; 168 MHz PLL locks from HSE | Boot log `HSE 8 MHz -> PLL`. Correct UART baud depends on `HSE_VALUE` being right |
+| STM32F407 with FPU (Cortex-M4F) | `CPACR = 0x00F00000`, hard-float code runs |
+| LED_R PF12 / LED_B PF11 active level | **Pending visual check**. See `docs/02-bringup-freertos.md` §7 |
+
 ## MCU, clocks, memory
 
 | Item | BSP value | Verify by |
