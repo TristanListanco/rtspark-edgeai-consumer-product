@@ -83,7 +83,7 @@ Default storage limits are **RH ≥ 70 % or temperature ≥ 30 °C, sustained 10
 |---|---|---|
 | KEY_UP | Acknowledge / mute; clears the "unread events" indicator | Arm (2 s), then close the lid within 30 s |
 | KEY_LEFT / KEY_RIGHT | Previous / next screen (status → event log → storage history) | — |
-| KEY_DOWN | — | Diagnostics / service mode (3 s) |
+| KEY_DOWN | — | Diagnostics / service mode (hold ≥ 1.5 s; implemented in M3) |
 | All 4 keys | 4-key disarm code (set in diagnostics; stored hashed in SPI flash) | — |
 
 ### 5.3 Explainable feedback

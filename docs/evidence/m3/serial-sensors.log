@@ -1,0 +1,147 @@
+[     0.001] ==== KeepSafe Box / RT-Spark (M3 drivers) ====
+[     0.006] build: Nov  1 2026 15:36:26, gcc 14.2.1 20241119
+[     0.011] stack: STM32CubeF4 HAL v1.8.5, FreeRTOS V11.3.2
+[     0.017] reset cause: software (debugger/NVIC) (RCC_CSR=0x14000000)
+[     0.023] clock: HSE 8 MHz -> PLL, SYSCLK 168000000 Hz, HCLK 168000000 Hz, PCLK1 42000000 Hz, PCLK2 84000000 Hz
+[     0.033] FPU: CPACR=0x00f00000 (0x00F00000 = CP10/CP11 full access)
+[     0.040] FreeRTOS heap 49152 B, tick 1000 Hz, max syscall IRQ prio 5
+[     0.046] starting scheduler (45864 B heap free)
+[     2.959] i2c scan i2c1: 0 device(s)
+[     2.962] i2c scan i2c2: 0x10  ES8388 audio codec
+[     2.968] i2c scan i2c2: 0x1e  AP3216C light/proximity
+[     2.975] i2c scan i2c2: 0x68  ICM20608 IMU
+[     2.980] i2c scan i2c2: 3 device(s)
+[     2.990] i2c scan i2c3: 0x38  AHT temp/humidity
+[     3.003] i2c scan i2c3: 1 device(s)
+[     3.117] ICM20608: ok (addr 0x68, WHO_AM_I 0xaf), +/-8 g, +/-1000 dps, ODR 100 Hz
+[     3.139] AP3216C: ok (addr 0x1e), ALS range 0..5162 lx, PS + IR on
+[     3.195] AHT: ok (addr 0x38, variant AHT20/21)
+[     3.200] init done (36864 B heap free)
+[     4.204] imu   ok     a=[-0.029 +0.050 +1.003] g  w=[+1.6 -0.1 -0.3] dps  die +35.85 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[     4.217] light ok     als 9.69 lx  ps 4  ir 11  obj 0 | 10/s, err 0
+[     4.224] env   ok     +30.32 C  +75.91 %RH (AHT20/21) | age 939 ms, n 1, err 0
+[     5.204] imu   ok     a=[-0.030 +0.051 +1.000] g  w=[+1.6 +0.0 -0.3] dps  die +35.96 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[     5.217] light ok     als 9.61 lx  ps 8  ir 14  obj 0 | 10/s, err 0
+[     5.224] env   ok     +30.32 C  +75.91 %RH (AHT20/21) | age 1939 ms, n 1, err 0
+[     6.204] imu   ok     a=[-0.030 +0.052 +1.003] g  w=[+1.6 +0.0 -0.3] dps  die +36.05 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[     6.217] light ok     als 9.61 lx  ps 7  ir 10  obj 0 | 10/s, err 0
+[     6.224] env   ok     +30.32 C  +75.91 %RH (AHT20/21) | age 2939 ms, n 1, err 0
+[     7.204] imu   ok     a=[-0.030 +0.054 +1.002] g  w=[+1.6 +0.0 -0.3] dps  die +36.09 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[     7.217] light ok     als 9.61 lx  ps 3  ir 16  obj 0 | 10/s, err 0
+[     7.224] env   ok     +30.32 C  +75.91 %RH (AHT20/21) | age 3939 ms, n 1, err 0
+[     8.205] imu   ok     a=[-0.032 +0.053 +1.005] g  w=[+1.6 +0.0 -0.3] dps  die +36.14 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[     8.218] light ok     als 9.53 lx  ps 0  ir 8  obj 0 | 10/s, err 0
+[     8.224] env   ok     +30.32 C  +75.91 %RH (AHT20/21) | age 4939 ms, n 1, err 0
+[     9.204] imu   ok     a=[-0.036 +0.051 +1.001] g  w=[+1.6 +0.0 -0.3] dps  die +36.17 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[     9.217] light ok     als 9.37 lx  ps 8  ir 10  obj 0 | 10/s, err 0
+[     9.224] env   ok     +30.33 C  +75.96 %RH (AHT20/21) | age 939 ms, n 2, err 0
+[    10.204] imu   ok     a=[-0.029 +0.050 +1.002] g  w=[+1.6 +0.0 -0.3] dps  die +36.19 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    10.217] light ok     als 9.61 lx  ps 0  ir 11  obj 0 | 10/s, err 0
+[    10.224] env   ok     +30.33 C  +75.96 %RH (AHT20/21) | age 1939 ms, n 2, err 0
+[    11.204] imu   ok     a=[-0.030 +0.049 +1.002] g  w=[+1.6 +0.0 -0.3] dps  die +36.22 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    11.217] light ok     als 9.53 lx  ps 1  ir 12  obj 0 | 10/s, err 0
+[    11.224] env   ok     +30.33 C  +75.96 %RH (AHT20/21) | age 2939 ms, n 2, err 0
+[    12.204] imu   ok     a=[-0.030 +0.052 +1.002] g  w=[+1.6 +0.0 -0.3] dps  die +36.22 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    12.217] light ok     als 9.53 lx  ps 7  ir 14  obj 0 | 10/s, err 0
+[    12.224] env   ok     +30.33 C  +75.96 %RH (AHT20/21) | age 3939 ms, n 2, err 0
+[    13.205] imu   ok     a=[-0.031 +0.051 +1.000] g  w=[+1.6 +0.0 -0.3] dps  die +36.25 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    13.218] light ok     als 9.61 lx  ps 0  ir 14  obj 0 | 10/s, err 0
+[    13.225] env   ok     +30.33 C  +75.96 %RH (AHT20/21) | age 4940 ms, n 2, err 0
+[    14.204] imu   ok     a=[-0.031 +0.052 +0.999] g  w=[+1.6 +0.0 -0.3] dps  die +36.25 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    14.217] light ok     als 9.61 lx  ps 0  ir 11  obj 0 | 10/s, err 0
+[    14.224] env   ok     +30.34 C  +75.97 %RH (AHT20/21) | age 939 ms, n 3, err 0
+[    15.204] imu   ok     a=[-0.031 +0.051 +1.002] g  w=[+1.6 +0.0 -0.3] dps  die +36.28 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    15.217] light ok     als 9.53 lx  ps 1  ir 11  obj 0 | 10/s, err 0
+[    15.224] env   ok     +30.34 C  +75.97 %RH (AHT20/21) | age 1939 ms, n 3, err 0
+[    16.204] imu   ok     a=[-0.032 +0.051 +1.000] g  w=[+1.6 -0.1 -0.3] dps  die +36.31 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    16.217] light ok     als 9.53 lx  ps 5  ir 12  obj 0 | 10/s, err 0
+[    16.224] env   ok     +30.34 C  +75.97 %RH (AHT20/21) | age 2939 ms, n 3, err 0
+[    17.204] imu   ok     a=[-0.031 +0.052 +1.004] g  w=[+1.6 +0.0 -0.3] dps  die +36.30 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    17.217] light ok     als 9.69 lx  ps 4  ir 8  obj 0 | 10/s, err 0
+[    17.224] env   ok     +30.34 C  +75.97 %RH (AHT20/21) | age 3939 ms, n 3, err 0
+[    18.205] imu   ok     a=[-0.029 +0.052 +1.005] g  w=[+1.6 +0.0 -0.3] dps  die +36.34 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    18.218] light ok     als 9.61 lx  ps 0  ir 14  obj 0 | 10/s, err 0
+[    18.225] env   ok     +30.34 C  +75.97 %RH (AHT20/21) | age 4940 ms, n 3, err 0
+[    19.204] imu   ok     a=[-0.029 +0.050 +1.002] g  w=[+1.6 -0.1 -0.3] dps  die +36.34 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    19.217] light ok     als 9.69 lx  ps 3  ir 11  obj 0 | 10/s, err 0
+[    19.224] env   ok     +30.34 C  +75.94 %RH (AHT20/21) | age 939 ms, n 4, err 0
+[    20.204] imu   ok     a=[-0.032 +0.051 +1.000] g  w=[+1.6 -0.1 -0.3] dps  die +36.34 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    20.217] light ok     als 9.69 lx  ps 0  ir 10  obj 0 | 10/s, err 0
+[    20.224] env   ok     +30.34 C  +75.94 %RH (AHT20/21) | age 1939 ms, n 4, err 0
+[    21.204] imu   ok     a=[-0.033 +0.052 +1.002] g  w=[+1.6 -0.1 -0.3] dps  die +36.36 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    21.217] light ok     als 9.69 lx  ps 4  ir 14  obj 0 | 10/s, err 0
+[    21.224] env   ok     +30.34 C  +75.94 %RH (AHT20/21) | age 2939 ms, n 4, err 0
+[    22.204] imu   ok     a=[-0.029 +0.052 +1.001] g  w=[+1.6 -0.1 -0.3] dps  die +36.35 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    22.217] light ok     als 9.61 lx  ps 4  ir 14  obj 0 | 10/s, err 0
+[    22.224] env   ok     +30.34 C  +75.94 %RH (AHT20/21) | age 3939 ms, n 4, err 0
+[    23.205] imu   ok     a=[-0.032 +0.051 +1.003] g  w=[+1.6 -0.1 -0.3] dps  die +36.36 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    23.218] light ok     als 9.61 lx  ps 8  ir 11  obj 0 | 10/s, err 0
+[    23.225] env   ok     +30.34 C  +75.94 %RH (AHT20/21) | age 4940 ms, n 4, err 0
+[    24.204] imu   ok     a=[-0.031 +0.052 +1.000] g  w=[+1.6 -0.1 -0.3] dps  die +36.32 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    24.217] light ok     als 9.53 lx  ps 15  ir 11  obj 0 | 10/s, err 0
+[    24.224] env   ok     +30.35 C  +75.94 %RH (AHT20/21) | age 939 ms, n 5, err 0
+[    25.204] imu   ok     a=[-0.032 +0.051 +1.002] g  w=[+1.6 -0.1 -0.3] dps  die +36.33 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    25.217] light ok     als 9.61 lx  ps 5  ir 11  obj 0 | 10/s, err 0
+[    25.224] env   ok     +30.35 C  +75.94 %RH (AHT20/21) | age 1939 ms, n 5, err 0
+[    26.204] imu   ok     a=[-0.030 +0.053 +1.005] g  w=[+1.6 -0.1 -0.3] dps  die +36.33 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    26.217] light ok     als 9.69 lx  ps 0  ir 15  obj 0 | 10/s, err 0
+[    26.224] env   ok     +30.35 C  +75.94 %RH (AHT20/21) | age 2939 ms, n 5, err 0
+[    27.204] imu   ok     a=[-0.032 +0.051 +1.000] g  w=[+1.6 -0.1 -0.3] dps  die +36.33 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    27.217] light ok     als 9.53 lx  ps 3  ir 14  obj 0 | 10/s, err 0
+[    27.224] env   ok     +30.35 C  +75.94 %RH (AHT20/21) | age 3939 ms, n 5, err 0
+[    28.205] imu   ok     a=[-0.031 +0.052 +1.001] g  w=[+1.6 -0.1 -0.3] dps  die +36.31 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    28.218] light ok     als 9.37 lx  ps 7  ir 11  obj 0 | 10/s, err 0
+[    28.225] env   ok     +30.35 C  +75.94 %RH (AHT20/21) | age 4940 ms, n 5, err 0
+[    29.204] imu   ok     a=[-0.029 +0.051 +1.001] g  w=[+1.6 +0.0 -0.3] dps  die +36.34 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    29.217] light ok     als 9.69 lx  ps 20  ir 10  obj 0 | 10/s, err 0
+[    29.224] env   ok     +30.31 C  +75.91 %RH (AHT20/21) | age 939 ms, n 6, err 0
+[    30.204] imu   ok     a=[-0.032 +0.052 +1.002] g  w=[+1.6 -0.1 -0.3] dps  die +36.33 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    30.217] light ok     als 9.53 lx  ps 0  ir 12  obj 0 | 10/s, err 0
+[    30.224] env   ok     +30.31 C  +75.91 %RH (AHT20/21) | age 1939 ms, n 6, err 0
+[    31.204] imu   ok     a=[-0.031 +0.053 +1.002] g  w=[+1.6 +0.0 -0.3] dps  die +36.31 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    31.217] light ok     als 9.69 lx  ps 1  ir 8  obj 0 | 10/s, err 0
+[    31.224] env   ok     +30.31 C  +75.91 %RH (AHT20/21) | age 2939 ms, n 6, err 0
+[    32.204] imu   ok     a=[-0.032 +0.050 +0.999] g  w=[+1.6 +0.0 -0.3] dps  die +36.33 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    32.217] light ok     als 9.61 lx  ps 1  ir 15  obj 0 | 10/s, err 0
+[    32.224] env   ok     +30.31 C  +75.91 %RH (AHT20/21) | age 3939 ms, n 6, err 0
+[    33.205] imu   ok     a=[-0.031 +0.052 +1.003] g  w=[+1.6 -0.1 -0.3] dps  die +36.33 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    33.218] light ok     als 9.61 lx  ps 3  ir 11  obj 0 | 10/s, err 0
+[    33.225] env   ok     +30.31 C  +75.91 %RH (AHT20/21) | age 4940 ms, n 6, err 0
+[    33.232] heap: free 40056 B, min-ever free 36864 B, total 49152 B; uptime 33 s
+[    33.240]   task       st prio  stack peak/alloc (B)  min-free   cpu
+[    33.247]   IDLE       R     0     104 / 508           79 %   84.36 %
+[    33.253]   Tmr Svc    B     6     112 / 1020          89 %    0.00 %
+[    33.260]   sensor     B     4     388 / 2044          81 %    4.20 %
+[    33.267]   env        B     2     220 / 1532          85 %    0.02 %
+[    33.273]   monitor    X     1     860 / 2044          57 %    2.40 %
+[    33.280]   heartbeat  B     1     104 / 508           79 %    0.00 %
+[    34.204] imu   ok     a=[-0.034 +0.054 +1.003] g  w=[+1.6 -0.1 -0.2] dps  die +36.33 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    34.217] light ok     als 9.61 lx  ps 0  ir 11  obj 0 | 10/s, err 0
+[    34.224] env   ok     +30.15 C  +75.95 %RH (AHT20/21) | age 939 ms, n 7, err 0
+[    35.204] imu   ok     a=[-0.030 +0.049 +0.999] g  w=[+1.6 -0.1 -0.3] dps  die +36.34 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    35.217] light ok     als 9.61 lx  ps 14  ir 4  obj 0 | 10/s, err 0
+[    35.224] env   ok     +30.15 C  +75.95 %RH (AHT20/21) | age 1939 ms, n 7, err 0
+[    36.204] imu   ok     a=[-0.030 +0.052 +1.000] g  w=[+1.6 -0.1 -0.3] dps  die +36.33 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    36.217] light ok     als 9.53 lx  ps 3  ir 11  obj 0 | 10/s, err 0
+[    36.224] env   ok     +30.15 C  +75.95 %RH (AHT20/21) | age 2939 ms, n 7, err 0
+[    37.204] imu   ok     a=[-0.031 +0.052 +1.002] g  w=[+1.6 +0.0 -0.3] dps  die +36.36 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    37.217] light ok     als 9.69 lx  ps 5  ir 14  obj 0 | 10/s, err 0
+[    37.224] env   ok     +30.15 C  +75.95 %RH (AHT20/21) | age 3939 ms, n 7, err 0
+[    38.205] imu   ok     a=[-0.030 +0.053 +0.999] g  w=[+1.6 +0.0 -0.3] dps  die +36.34 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    38.218] light ok     als 9.53 lx  ps 0  ir 12  obj 0 | 10/s, err 0
+[    38.225] env   ok     +30.15 C  +75.95 %RH (AHT20/21) | age 4940 ms, n 7, err 0
+[    39.204] imu   ok     a=[-0.032 +0.052 +1.000] g  w=[+1.7 +0.0 -0.3] dps  die +36.36 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    39.217] light ok     als 9.61 lx  ps 12  ir 14  obj 0 | 10/s, err 0
+[    39.224] env   ok     +30.12 C  +76.06 %RH (AHT20/21) | age 939 ms, n 8, err 0
+[    40.204] imu   ok     a=[-0.031 +0.051 +1.005] g  w=[+1.6 +0.0 -0.2] dps  die +36.36 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    40.217] light ok     als 9.53 lx  ps 0  ir 14  obj 0 | 10/s, err 0
+[    40.224] env   ok     +30.12 C  +76.06 %RH (AHT20/21) | age 1939 ms, n 8, err 0
+[    41.204] imu   ok     a=[-0.031 +0.052 +1.003] g  w=[+1.6 -0.1 -0.3] dps  die +36.36 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    41.217] light ok     als 9.53 lx  ps 1  ir 11  obj 0 | 10/s, err 0
+[    41.224] env   ok     +30.12 C  +76.06 %RH (AHT20/21) | age 2939 ms, n 8, err 0
+[    42.204] imu   ok     a=[-0.031 +0.051 +1.001] g  w=[+1.6 -0.1 -0.3] dps  die +36.36 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    42.217] light ok     als 9.61 lx  ps 1  ir 10  obj 0 | 10/s, err 0
+[    42.224] env   ok     +30.12 C  +76.06 %RH (AHT20/21) | age 3939 ms, n 8, err 0
+[    43.205] imu   ok     a=[-0.030 +0.050 +1.003] g  w=[+1.6 -0.1 -0.3] dps  die +36.34 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    43.218] light ok     als 9.69 lx  ps 0  ir 12  obj 0 | 10/s, err 0
+[    43.225] env   ok     +30.12 C  +76.06 %RH (AHT20/21) | age 4940 ms, n 8, err 0

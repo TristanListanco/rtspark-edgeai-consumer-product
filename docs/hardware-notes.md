@@ -1,5 +1,9 @@
 # RT-Spark hardware notes (pre-bring-up)
 
+> **Superseded by [`02-hardware-inventory.md`](02-hardware-inventory.md)**, which has the M3 results measured on the board.
+> Several BSP claims below turned out to be wrong: AHT21 → AHT20/21 ✓, W25Q128 → **W25Q64**, EEPROM → **not fitted** (PB8/PB9 are CAN).
+> This file is kept as the record of what the BSP said before verification.
+
 **Status: UNVERIFIED.** These facts come from RT-Thread's official RT-Spark BSP
 ([`bsp/stm32/stm32f407-rt-spark`](https://github.com/RT-Thread/rt-thread/tree/master/bsp/stm32/stm32f407-rt-spark):
 `README.md`, `board/Kconfig`, `board/CubeMX_Config/CubeMX_Config.ioc`, `board/linker_scripts/link.lds`).

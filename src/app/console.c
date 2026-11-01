@@ -13,13 +13,17 @@
 #include "FreeRTOS.h"
 #include "board.h"
 #include "semphr.h"
+#include "stream_buffer.h"
 #include "task.h"
 
 #define LINE_MAX_LEN 192
+#define RX_BUFFER    128
+#define RX_IRQ_PRIO  6U /* >= configMAX_SYSCALL_INTERRUPT_PRIORITY: ISR uses FromISR API */
 
 static UART_HandleTypeDef huart1;
 static SemaphoreHandle_t tx_mutex;
 static char line[LINE_MAX_LEN];
+static StreamBufferHandle_t rx_stream;
 
 static bool rtos_running(void)
 {
@@ -76,6 +80,37 @@ void console_rtos_init(void)
 {
     tx_mutex = xSemaphoreCreateMutex();
     configASSERT(tx_mutex != NULL);
+}
+
+/* RX: the USART1 RXNE interrupt pushes each byte into a stream buffer. TX stays
+ * polled through the HAL, which only touches the TX flags. */
+void console_rx_start(void)
+{
+    rx_stream = xStreamBufferCreate(RX_BUFFER, 1);
+    configASSERT(rx_stream != NULL);
+    __HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+    HAL_NVIC_SetPriority(USART1_IRQn, RX_IRQ_PRIO, 0);
+    HAL_NVIC_EnableIRQ(USART1_IRQn);
+}
+
+int console_getc(uint32_t timeout_ms)
+{
+    uint8_t c;
+    if (rx_stream == NULL || xStreamBufferReceive(rx_stream, &c, 1, pdMS_TO_TICKS(timeout_ms)) != 1) {
+        return -1;
+    }
+    return c;
+}
+
+void USART1_IRQHandler(void)
+{
+    uint32_t sr = CONSOLE_USART->SR;
+    if (sr & (USART_SR_RXNE | USART_SR_ORE)) {
+        uint8_t c = (uint8_t)CONSOLE_USART->DR; /* SR then DR read also clears ORE */
+        BaseType_t woken = pdFALSE;
+        (void)xStreamBufferSendFromISR(rx_stream, &c, 1, &woken);
+        portYIELD_FROM_ISR(woken);
+    }
 }
 
 void console_lock(void)

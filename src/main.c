@@ -1,13 +1,14 @@
 /*
  * KeepSafe Box firmware entry point (RT-Spark, STM32F407ZGT6).
  * Boot order: HAL (NVIC group 4, TIM6 HAL tick) -> 168 MHz clock tree ->
- * cycle counter, LEDs, console -> boot report -> tasks -> FreeRTOS scheduler.
+ * cycle counter, LEDs, console -> boot report -> init task -> FreeRTOS scheduler.
+ * No HAL waits after the first FreeRTOS call: see src/app/app.c.
  */
 #include "FreeRTOS.h"
 #include "task.h"
 
+#include "app.h"
 #include "board.h"
-#include "bringup_tasks.h"
 #include "clock.h"
 #include "console.h"
 #include "cycles.h"
@@ -33,7 +34,7 @@ static void boot_report(clock_source_t clk)
     uint32_t csr = RCC->CSR;
     __HAL_RCC_CLEAR_RESET_FLAGS();
 
-    console_printf("==== KeepSafe Box / RT-Spark bring-up (M2) ====");
+    console_printf("==== KeepSafe Box / RT-Spark (M3 drivers) ====");
     console_printf("build: %s %s, gcc %s", __DATE__, __TIME__, __VERSION__);
     console_printf("stack: STM32CubeF4 HAL v%lu.%lu.%lu, FreeRTOS %s", hal >> 24, (hal >> 16) & 0xFFU,
                    (hal >> 8) & 0xFFU, tskKERNEL_VERSION_NUMBER);
@@ -58,7 +59,7 @@ int main(void)
     boot_report(clk);
 
     console_rtos_init();
-    bringup_tasks_start();
+    app_start();
 
     console_printf("starting scheduler (%u B heap free)", (unsigned)xPortGetFreeHeapSize());
     vTaskStartScheduler();

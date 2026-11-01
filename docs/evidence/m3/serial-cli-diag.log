@@ -1,0 +1,109 @@
+rtc set 2026-11-01 16:06:35
+[    47.692] rtc: set to 2026-11-01 16:06:35
+rtc
+[    52.618] rtc: 2026-11-01 16:06:39, source LSE 32.768 kHz crystal
+flash test
+[    57.577] flash: W25Q64, 8388608 bytes, JEDEC ef 40 17
+[    57.648] flash test: PASS - sector 0x7ff000: program 2 ms, verify 0/256 bad, erase 56 ms
+calib
+[    62.497] calib: keep the board still for 2 s...
+[    64.502] calib: 200 samples
+[    64.505] calib: accel mean [-57 33 993] mg, |a| = 995 mg (ideal 1000), noise sd [1 1 2] mg
+[    64.514] calib: gyro bias [1.56 0.15 0.39] dps, noise sd [0.03 0.03 0.03] dps
+diag
+[    67.764] ==== diagnostics: 18 checks, 14 PASS, 0 FAIL ====
+[    67.769]   CLOCK     PASS     SYSCLK 168 MHz from HSE 8 MHz
+[    67.775]   RTOS      PASS     10 tasks, heap min 26856 B, stack min 75% (ui)
+[    67.783]   IMU       PASS     ICM20608 id 0xaf, 30 smp/0.3s, err 0
+[    67.789]   LIGHT     PASS     AP3216C 6.14 lx ps 4, err 0
+[    67.795]   ENV       PASS     AHT20/21 36.38 C 58.47 %RH, age 4s
+[    67.801]   LCD       PASS     ST7789V3 id 81 b3, FSMC NE3 (visual)
+[    67.807]   LEDMATRIX PASS     19x WS2812, 5 DMA frames (visual)
+[    67.814]   BUZZER    PASS     PB0 TIM8_CH2N 2700 Hz running (audible)
+[    67.820]   KEYS      PASS     4 keys active-low, 0 events
+[    67.827]   LEDS      PASS     LED_R PF12 run, LED_G PF11 heartbeat
+[    67.833]   RTC       PASS     LSE, 2026-11-01 16:06:55
+[    67.839]   SPIFLASH  PASS     W25Q64 8 MB, JEDEC ef4017
+[    67.844]   MICROSD   ABSENT   no card (init err 0x4)
+[    67.849]   EEPROM    ABSENT   no ACK on i2c1 PB8/PB9 (not fitted?)
+[    67.856]   AUDIO     PASS     ES8388 codec ACK 0x10 on i2c2 (not used)
+[    67.863]   CONSOLE   PASS     USART1 115200 8N1 via ST-LINK VCP
+[    67.869]   WIFI      UNTESTED RW007 on SPI2: M3 step 4
+[    67.874]   CAN/485   UNTESTED pins unverified: M3 step 4
+stats
+[    72.560] heap: free 29008 B, min-ever free 26856 B, total 49152 B; uptime 72 s
+[    72.568]   task       st prio  stack peak/alloc (B)  min-free   cpu
+[    72.574]   IDLE       R     0     104 / 508           79 %   87.99 %
+[    72.581]   Tmr Svc    B     6     112 / 1020          89 %    0.00 %
+[    72.588]   sensor     B     4     372 / 2044          81 %    4.44 %
+[    72.594]   env        B     2     220 / 1532          85 %    0.02 %
+[    72.601]   monitor    B     1     120 / 2044          94 %    0.00 %
+[    72.608]   heartbeat  B     1     104 / 508           79 %    0.00 %
+[    72.615]   ui         B     2    1012 / 4092          75 %    3.20 %
+[    72.621]   cli        X     1     956 / 4092          76 %    0.18 %
+[    72.629]   buzzer     B     2     152 / 636           76 %    0.00 %
+[    72.635]   keys       B     3     192 / 1020          81 %    0.00 %
+live on
+[    77.489] live readings on (1 Hz, RTOS stats every 30 s)
+[    78.223] time  2026-11-01 16:07:05 (RTC)
+[    78.227] imu   ok     a=[-0.058 +0.033 +0.995] g  w=[+1.5 -0.1 -0.3] dps  die +42.01 C | 7500/s, period 9999..10001 us, err 0, sat 0, overrun 0
+[    78.240] light ok     als 6.06 lx  ps 0  ir 7  obj 0 | 750/s, err 0
+[    78.247] env   ok     +36.45 C  +58.34 %RH (AHT20/21) | age 4944 ms, n 15, err 0
+[    79.222] time  2026-11-01 16:07:06 (RTC)
+[    79.226] imu   ok     a=[-0.058 +0.033 +0.994] g  w=[+1.6 -0.1 -0.3] dps  die +42.06 C | 100/s, period 9998..10000 us, err 0, sat 0, overrun 0
+[    79.240] light ok     als 5.98 lx  ps 7  ir 7  obj 0 | 10/s, err 0
+[    79.246] env   ok     +36.49 C  +58.28 %RH (AHT20/21) | age 943 ms, n 16, err 0
+[    80.222] time  2026-11-01 16:07:07 (RTC)
+[    80.226] imu   ok     a=[-0.057 +0.033 +0.993] g  w=[+1.4 -0.1 -0.3] dps  die +42.05 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    80.239] light ok     als 5.98 lx  ps 0  ir 5  obj 0 | 10/s, err 0
+[    80.246] env   ok     +36.49 C  +58.28 %RH (AHT20/21) | age 1943 ms, n 16, err 0
+[    81.222] time  2026-11-01 16:07:08 (RTC)
+[    81.226] imu   ok     a=[-0.055 +0.031 +0.991] g  w=[+1.5 -0.1 -0.3] dps  die +42.05 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    81.240] light ok     als 5.98 lx  ps 0  ir 7  obj 0 | 10/s, err 0
+[    81.246] env   ok     +36.49 C  +58.28 %RH (AHT20/21) | age 2943 ms, n 16, err 0
+[    82.222] time  2026-11-01 16:07:09 (RTC)
+[    82.226] imu   ok     a=[-0.056 +0.031 +0.993] g  w=[+1.5 -0.1 -0.3] dps  die +42.02 C | 100/s, period 9999..10000 us, err 0, sat 0, overrun 0
+[    82.239] light ok     als 5.98 lx  ps 4  ir 8  obj 0 | 10/s, err 0
+[    82.246] env   ok     +36.49 C  +58.28 %RH (AHT20/21) | age 3943 ms, n 16, err 0
+live off
+[    82.638] live readings off
+reboot
+[    87.574] rebooting...
+[     0.001] ==== KeepSafe Box / RT-Spark (M3 drivers) ====
+[     0.006] build: Nov  1 2026 16:05:18, gcc 14.2.1 20241119
+[     0.011] stack: STM32CubeF4 HAL v1.8.5, FreeRTOS V11.3.2
+[     0.017] reset cause: software (debugger/NVIC) (RCC_CSR=0x14000000)
+[     0.023] clock: HSE 8 MHz -> PLL, SYSCLK 168000000 Hz, HCLK 168000000 Hz, PCLK1 42000000 Hz, PCLK2 84000000 Hz
+[     0.033] FPU: CPACR=0x00f00000 (0x00F00000 = CP10/CP11 full access)
+[     0.040] FreeRTOS heap 49152 B, tick 1000 Hz, max syscall IRQ prio 5
+[     0.046] starting scheduler (44832 B heap free)
+[     2.884] i2c scan i2c1: 0 device(s), scan took 2837 ms, 104 bus recoveries
+[     2.891] i2c scan i2c2: 0x10  ES8388 audio codec
+[     2.896] i2c scan i2c2: 0x1e  AP3216C light/proximity
+[     2.904] i2c scan i2c2: 0x68  ICM20608 IMU
+[     2.908] i2c scan i2c2: 3 device(s), scan took 17 ms, 0 bus recoveries
+[     2.921] i2c scan i2c3: 0x38  AHT temp/humidity
+[     2.934] i2c scan i2c3: 1 device(s), scan took 19 ms, 0 bus recoveries
+[     3.051] ICM20608: ok (addr 0x68, WHO_AM_I 0xaf), +/-8 g, +/-1000 dps, ODR 100 Hz
+[     3.073] AP3216C: ok (addr 0x1e), ALS range 0..5162 lx, PS + IR on
+[     3.129] AHT: ok (addr 0x38, variant AHT20/21)
+[     3.134] RTC: LSE 32.768 kHz crystal, 2026-11-01 16:07:18 (kept across reset)
+[     3.141] SPI flash: W25Q64, 8192 KB, JEDEC ef 40 17
+[     3.149] microSD: no card or init failed (HAL error 0x4) - continuing without it
+[     3.158] init done (27040 B heap free)
+[     3.162] cli: ready, type 'help'
+[     3.427] LCD: RDDID 81 81 b3 -> ST7789V3 ok
+[     3.431] LED matrix: 19 x WS2812 on PA7 (TIM3_CH2 + DMA1 Stream5)
+[     3.438] buzzer: PB0 TIM8_CH2N 2700 Hz
+[     3.445] keys: idle level UP=high DOWN=high LEFT=high RIGHT=high (pressed = opposite)
+[     3.453] selftest: LCD full red
+[     3.862] selftest: LCD full green
+[     4.270] selftest: LCD full blue
+[     4.678] selftest: LCD full white
+rtc
+[     4.849] rtc: 2026-11-01 16:07:19, source LSE 32.768 kHz crystal
+[     5.086] selftest: buzzer beep-beep (2700 Hz)
+[     5.091] selftest: LED matrix all red
+[     5.594] selftest: LED matrix all green
+[     6.097] selftest: LED matrix all blue
+[     6.600] selftest: done

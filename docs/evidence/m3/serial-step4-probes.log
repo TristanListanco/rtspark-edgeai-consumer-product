@@ -1,0 +1,60 @@
+[     0.001] ==== KeepSafe Box / RT-Spark (M3 drivers) ====
+[     0.006] build: Nov  1 2026 16:11:50, gcc 14.2.1 20241119
+[     0.011] stack: STM32CubeF4 HAL v1.8.5, FreeRTOS V11.3.2
+[     0.017] reset cause: software (debugger/NVIC) (RCC_CSR=0x14000000)
+[     0.023] clock: HSE 8 MHz -> PLL, SYSCLK 168000000 Hz, HCLK 168000000 Hz, PCLK1 42000000 Hz, PCLK2 84000000 Hz
+[     0.033] FPU: CPACR=0x00f00000 (0x00F00000 = CP10/CP11 full access)
+[     0.040] FreeRTOS heap 49152 B, tick 1000 Hz, max syscall IRQ prio 5
+[     0.046] starting scheduler (44840 B heap free)
+[     2.888] i2c scan i2c1: 0 device(s), scan took 2841 ms, 105 bus recoveries
+[     2.895] i2c scan i2c2: 0x10  ES8388 audio codec
+[     2.900] i2c scan i2c2: 0x1e  AP3216C light/proximity
+[     2.908] i2c scan i2c2: 0x68  ICM20608 IMU
+[     2.912] i2c scan i2c2: 3 device(s), scan took 17 ms, 0 bus recoveries
+[     2.925] i2c scan i2c3: 0x38  AHT temp/humidity
+[     2.938] i2c scan i2c3: 1 device(s), scan took 19 ms, 0 bus recoveries
+[     3.055] ICM20608: ok (addr 0x68, WHO_AM_I 0xaf), +/-8 g, +/-1000 dps, ODR 100 Hz
+[     3.077] AP3216C: ok (addr 0x1e), ALS range 0..5162 lx, PS + IR on
+[     3.133] AHT: ok (addr 0x38, variant AHT20/21)
+[     3.138] RTC: LSE 32.768 kHz crystal, 2026-11-01 16:12:06 (kept across reset)
+[     3.145] SPI flash: W25Q64, 8192 KB, JEDEC ef 40 17
+[     3.153] microSD: no card or init failed (HAL error 0x4) - continuing without it
+[     4.130] Wi-Fi RW007: INT/BUSY went high after 670 ms, SPI magic 00000000 00000000 -> booted but no protocol reply; held in reset (not used)
+[     4.160] CAN1 probe: PB8 driven high, PB9 driven high, frame LEC 3 -> transceiver echoes TX; no other node on the bus
+[     4.180] RS485 probe (PG8=receive): PC7 floating, PG9 driven high -> transceiver RO on PG9 (USART6_RX)
+[     4.190] init done (27048 B heap free)
+[     4.195] cli: ready, type 'help'
+[     4.459] LCD: RDDID 81 81 b3 -> ST7789V3 ok
+[     4.464] LED matrix: 19 x WS2812 on PA7 (TIM3_CH2 + DMA1 Stream5)
+[     4.470] buzzer: PB0 TIM8_CH2N 2700 Hz
+[     4.477] keys: idle level UP=high DOWN=high LEFT=high RIGHT=high (pressed = opposite)
+[     4.485] selftest: LCD full red
+[     4.894] selftest: LCD full green
+[     5.302] selftest: LCD full blue
+[     5.710] selftest: LCD full white
+[     6.118] selftest: buzzer beep-beep (2700 Hz)
+[     6.123] selftest: LED matrix all red
+[     6.626] selftest: LED matrix all green
+[     7.129] selftest: LED matrix all blue
+[     7.632] selftest: done
+diag
+[    15.277] ==== diagnostics: 19 checks, 16 PASS, 0 FAIL ====
+[    15.283]   CLOCK     PASS     SYSCLK 168 MHz from HSE 8 MHz
+[    15.289]   RTOS      PASS     10 tasks, heap min 26864 B, stack min 75% (ui)
+[    15.297]   IMU       PASS     ICM20608 id 0xaf, 30 smp/0.3s, err 0
+[    15.304]   LIGHT     PASS     AP3216C 6.46 lx ps 0, err 0
+[    15.309]   ENV       PASS     AHT20/21 36.98 C 57.14 %RH, age 1s
+[    15.316]   LCD       PASS     ST7789V3 id 81 b3, FSMC NE3 (visual)
+[    15.322]   LEDMATRIX PASS     19x WS2812, 5 DMA frames (visual)
+[    15.328]   BUZZER    PASS     PB0 TIM8_CH2N 2700 Hz running (audible)
+[    15.335]   KEYS      PASS     4 keys active-low, 0 events
+[    15.341]   LEDS      PASS     LED_R PF12 run, LED_G PF11 heartbeat
+[    15.347]   RTC       PASS     LSE, 2026-11-01 16:12:19
+[    15.352]   SPIFLASH  PASS     W25Q64 8 MB, JEDEC ef4017
+[    15.358]   MICROSD   ABSENT   no card (init err 0x4)
+[    15.364]   EEPROM    ABSENT   not fitted: PB8/PB9 carry the CAN transceiver
+[    15.371]   AUDIO     PASS     ES8388 codec ACK 0x10 on i2c2 (not used)
+[    15.378]   CONSOLE   PASS     USART1 115200 8N1 via ST-LINK VCP
+[    15.384]   WIFI      WARN     RW007 booted, no magic, boot 670 ms (held in reset)
+[    15.391]   CAN       PASS     PB8/PB9: transceiver echoes TX; no other node on the bu
+[    15.400]   RS485     PASS     transceiver RO on PG9 (USART6_RX)

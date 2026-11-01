@@ -56,3 +56,17 @@ int _isatty(int fd)
     (void)fd;
     return 1;
 }
+
+/* Pulled in by abort() -> raise(); there are no processes or signals here */
+int _getpid(void)
+{
+    return 1;
+}
+
+int _kill(int pid, int sig)
+{
+    (void)pid;
+    (void)sig;
+    errno = EINVAL;
+    return -1;
+}

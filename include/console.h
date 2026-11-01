@@ -4,8 +4,14 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
+#include <stdint.h>
+
 void console_init(void);
 void console_rtos_init(void);
+
+/* Input: start RX interrupts (call from a task), then read bytes; -1 on timeout. */
+void console_rx_start(void);
+int console_getc(uint32_t timeout_ms);
 
 void console_printf(const char *fmt, ...) __attribute__((format(printf, 1, 2)));
 

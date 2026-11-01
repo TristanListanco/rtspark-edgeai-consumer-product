@@ -130,10 +130,10 @@ docs/                          # report, diagrams, test plan, evidence/ (logs, p
 
 ---
 
-## M3: Drivers + integrated diagnostic mode (Week 2) · 15 pts
+## M3: Drivers + integrated diagnostic mode (Week 2) · 15 pts ✅ done 2026-11-01: see `docs/02-hardware-inventory.md`
 
 **Do**
-- [ ] Write or port HAL drivers. Each one returns a status code. If init fails, mark the component `FAULT` and let the system keep running.
+- [x] Write or port HAL drivers. Each one returns a status code. If init fails, mark the component `FAULT` and let the system keep running.
 
   | Component | Check |
   |---|---|
@@ -150,13 +150,13 @@ docs/                          # report, diagrams, test plan, evidence/ (logs, p
   | Wi-Fi module | presence/status at minimum (see risk register) |
   | IR, CAN, RS485, USB, expansion | only if installed or equipped, otherwise document as absent/not equipped |
 
-- [ ] If sensors share an I²C bus, guard it with a **bus mutex**.
-- [ ] **Diagnostic mode,** entered by button long-press or serial command:
+- [x] If sensors share an I²C bus, guard it with a **bus mutex**.
+- [x] **Diagnostic mode,** entered by button long-press or serial command:
   - live timestamped readings with units on LCD and serial
   - self-tests for LED, buzzer, buttons, flash, SD, RTC, and Wi-Fi
   - a per-component PASS/FAIL/ABSENT summary
-- [ ] Measure **actual sampling intervals and jitter** against target rates. Record calibration offsets and init-failure behavior.
-- [ ] Get **instructor-verified exceptions** in writing for any absent or inoperative component.
+- [x] Measure **actual sampling intervals and jitter** against target rates. Record calibration offsets and init-failure behavior.
+- [ ] Get **instructor-verified exceptions** in writing for any absent or inoperative component. *(List prepared in `02-hardware-inventory.md` §5. **Still to do:** get the instructor to sign it off, and photograph both sides of the board.)*
 
 **Evidence:** `docs/02-hardware-inventory.md` with the inventory table (bus, address, pins, status), the final component-to-function matrix, serial logs, photos, and short video clips of each self-test.
 **Done when:** every present component is exercised live from the *same* FreeRTOS firmware. Tag `m3-diagnostics`.
