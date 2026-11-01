@@ -2,7 +2,7 @@
 
 BCA182 Embedded Systems Programming, Laboratory Activity No. 4 (MSU-IIT).
 
-> **Status:** M0 (project setup) is done. The product concept is still to be decided (M1).
+> **Status:** M0 (setup) and M1 (concept: **KeepSafe Box**, see [docs/01-concept.md](docs/01-concept.md)) are done. Next: M2 board bring-up.
 > See [PLAN.md](PLAN.md) for milestones.
 
 This is an original consumer product on the RT-Thread **RT-Spark (STM32F407ZGT6)** board. It reads onboard sensors, runs a trained ML model **on the microcontroller**, and responds to the user locally, with no Internet connection required.

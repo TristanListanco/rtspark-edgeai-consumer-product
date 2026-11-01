@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 462" width="1000" height="462" font-family="Helvetica, Arial, sans-serif">
+  <title>KeepSafe Box system block diagram</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="462" fill="#ffffff"/>
+  <text x="500" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#111">KeepSafe Box: system block diagram</text>
+
+  <!-- Column 1: SENSE -->
+  <rect x="20" y="50" width="176" height="34" rx="6" fill="#1d4ed8"/>
+  <text x="108" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">SENSE</text>
+  <rect x="20" y="84" width="176" height="226" fill="#fff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <g font-size="11.5" fill="#222">
+    <text x="30" y="104" font-weight="bold">ICM20608 IMU</text>
+    <text x="30" y="119">accel + gyro, 100 Hz</text>
+    <text x="30" y="141" font-weight="bold">AP3216C</text>
+    <text x="30" y="156">ambient light + proximity,</text>
+    <text x="30" y="171">10 Hz</text>
+    <text x="30" y="193" font-weight="bold">AHT21 / AHT10</text>
+    <text x="30" y="208">temperature + RH, every 5 s</text>
+    <text x="30" y="230" font-weight="bold">4 keys (EXTI)</text>
+    <text x="30" y="245">ack, arm/disarm, diag</text>
+    <text x="30" y="267" font-weight="bold">RTC (LSE 32.768 kHz)</text>
+    <text x="30" y="282">event timestamps</text>
+  </g>
+
+  <!-- Column 2: PROCESS -->
+  <rect x="216" y="50" width="176" height="34" rx="6" fill="#6d28d9"/>
+  <text x="304" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">PROCESS</text>
+  <rect x="216" y="84" width="176" height="226" fill="#fff" stroke="#6d28d9" stroke-width="1.5"/>
+  <g font-size="11.5" fill="#222">
+    <text x="226" y="104" font-weight="bold">Validate</text>
+    <text x="226" y="119">range / stuck / I²C errors</text>
+    <text x="226" y="134">invalid → SENSOR FAULT</text>
+    <text x="226" y="156" font-weight="bold">Window</text>
+    <text x="226" y="171">2 s window, 1 s hop</text>
+    <text x="226" y="193" font-weight="bold">Features</text>
+    <text x="226" y="208">motion std / RMS / p2p</text>
+    <text x="226" y="223">lid tilt angle</text>
+    <text x="226" y="238">impact peak (jerk)</text>
+    <text x="226" y="253">light level + change</text>
+    <text x="226" y="268">proximity</text>
+    <text x="226" y="283">scale to int16</text>
+  </g>
+
+  <!-- Column 3: INFER -->
+  <rect x="412" y="50" width="176" height="34" rx="6" fill="#b91c1c"/>
+  <text x="500" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">INFER (on STM32F407)</text>
+  <rect x="412" y="84" width="176" height="226" fill="#fff" stroke="#b91c1c" stroke-width="1.5"/>
+  <g font-size="11.5" fill="#222">
+    <text x="422" y="104" font-weight="bold">Classifier (emlearn, C)</text>
+    <text x="422" y="119">IDLE · CARRIED</text>
+    <text x="422" y="134">OPENED · ROUGH</text>
+    <text x="422" y="149">+ confidence</text>
+    <text x="422" y="171" font-weight="bold">Post-processing</text>
+    <text x="422" y="186">2-of-3 window vote</text>
+    <text x="422" y="201">low confidence → UNCERTAIN</text>
+    <text x="422" y="223" font-weight="bold">Storage rule</text>
+    <text x="422" y="238">RH or temp over limit</text>
+    <text x="422" y="253">for N minutes</text>
+    <text x="422" y="275" font-weight="bold">Baseline (comparison)</text>
+    <text x="422" y="290">threshold rules</text>
+  </g>
+
+  <!-- Column 4: ACT -->
+  <rect x="608" y="50" width="176" height="34" rx="6" fill="#047857"/>
+  <text x="696" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">ACT</text>
+  <rect x="608" y="84" width="176" height="226" fill="#fff" stroke="#047857" stroke-width="1.5"/>
+  <g font-size="11.5" fill="#222">
+    <text x="618" y="104" font-weight="bold">Decision state machine</text>
+    <text x="618" y="119">ARMED / DISARMED</text>
+    <text x="618" y="141" font-weight="bold">LCD</text>
+    <text x="618" y="156">state + reason + values</text>
+    <text x="618" y="171">events since last check</text>
+    <text x="618" y="193" font-weight="bold">LEDs / LED matrix</text>
+    <text x="618" y="208">status colour + pattern</text>
+    <text x="618" y="230" font-weight="bold">Buzzer</text>
+    <text x="618" y="245">one pattern per alert type</text>
+  </g>
+
+  <!-- Column 5: RECORD -->
+  <rect x="804" y="50" width="176" height="34" rx="6" fill="#374151"/>
+  <text x="892" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">RECORD / TRANSMIT</text>
+  <rect x="804" y="84" width="176" height="226" fill="#fff" stroke="#374151" stroke-width="1.5"/>
+  <g font-size="11.5" fill="#222">
+    <text x="814" y="104" font-weight="bold">Event log</text>
+    <text x="814" y="119">RTC-stamped → SPI flash</text>
+    <text x="814" y="141" font-weight="bold">microSD</text>
+    <text x="814" y="156">data capture, CSV export</text>
+    <text x="814" y="178" font-weight="bold">Serial console</text>
+    <text x="814" y="193">USART1: diag, stats</text>
+    <text x="814" y="215" font-weight="bold">Wi-Fi (optional)</text>
+    <text x="814" y="230">event notice only;</text>
+    <text x="814" y="245">never needed to decide</text>
+  </g>
+
+  <!-- Main flow arrows -->
+  <g stroke="#444" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="198" y1="180" x2="214" y2="180"/>
+    <line x1="394" y1="180" x2="410" y2="180"/>
+    <line x1="590" y1="180" x2="606" y2="180"/>
+    <line x1="786" y1="180" x2="802" y2="180"/>
+  </g>
+
+  <!-- Key events bypass to the state machine -->
+  <path d="M108,310 L108,325 L696,325 L696,313" fill="none" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+  <text x="402" y="341" text-anchor="middle" font-size="11" fill="#1d4ed8">key events → state machine (acknowledge, arm/disarm code, screens)</text>
+
+  <!-- Diagnostic mode -->
+  <rect x="20" y="352" width="960" height="70" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="34" y="372" font-size="13" font-weight="bold" fill="#111">Integrated diagnostic / service mode (long-press KEY_DOWN or serial "diag")</text>
+  <text x="34" y="392" font-size="11.5" fill="#222">Live readings with units and PASS / FAIL / ABSENT self-tests for every fitted component: IMU · light/proximity · temp/RH · LCD · LEDs · LED matrix · buzzer ·</text>
+  <text x="34" y="408" font-size="11.5" fill="#222">keys · RTC · SPI flash · microSD · Wi-Fi · EEPROM / CAN / RS485 / USB / IR / audio (if fitted). Also: calibration (closed-lid tilt and darkness reference).</text>
+
+  <text x="500" y="448" text-anchor="middle" font-size="12" font-style="italic" fill="#555">Processing, inference, and decisions run on the STM32F407 under FreeRTOS. The product needs no network connection.</text>
+</svg>

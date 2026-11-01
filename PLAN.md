@@ -43,7 +43,7 @@ The handout requires the problem paragraph, **at least two alternatives**, and a
 
 | Candidate | Classes | Pros | Cons |
 |---|---|---|---|
-| **A. Smart keepsafe/storage box (recommended):** monitors a box holding medicine, documents, or valuables | `IDLE`, `CARRIED`, `OPENED/HANDLED`, `ROUGH` (shake/knock) | IMU and light/proximity both feed the classifier. All classes are safe and quick to reproduce many times. AHT10 adds a "storage humidity" warning. | You must make sure it is not just a copy of a generic "item tracker" |
+| **A. Smart keepsafe/storage box (chosen: KeepSafe Box, see `docs/01-concept.md`):** monitors a box holding medicine, documents, or valuables | `IDLE`, `CARRIED`, `OPENED/HANDLED`, `ROUGH` (shake/knock) | IMU and light/proximity both feed the classifier. All classes are safe and quick to reproduce many times. AHT10 adds a "storage humidity" warning. | You must make sure it is not just a copy of a generic "item tracker" |
 | B. Laundry/appliance vibration monitor | `IDLE`, `WASH`, `SPIN`, `UNBALANCED` | Good fit for spectral (FFT) features | Needs real machine cycles, so collecting ≥60 instances per class is slow |
 | C. Context-aware study desk | `AWAY`, `PRESENT-IDLE`, `WORKING`, `BUMP` | Proximity and light map naturally to presence | The IMU signal on a desk is weak and classes blur together |
 
@@ -78,20 +78,20 @@ docs/                          # report, diagrams, test plan, evidence/ (logs, p
 
 ---
 
-## M1: Product concept & requirements (Week 1) · 10 pts
+## M1: Product concept & requirements (Week 1) · 10 pts ✅ done 2026-11-01: KeepSafe Box
 
 **Do**
-- [ ] Write a one-paragraph problem statement covering target user, problem, operating environment, and product goal.
-- [ ] Describe at least 2 alternative ideas and why you chose the final one (use the table above).
-- [ ] Define ≥3 classes with **operational definitions**: what physically happens, how to reproduce it, and how long it lasts. For anomaly detection instead, define *nominal* plus two safely simulated abnormal scenarios, and get instructor approval for anything hazardous.
-- [ ] Draw the block diagram: Sense → Process (filter/window/features) → Infer locally → Act → Record/transmit.
-- [ ] Draft the component-to-function matrix. Tag every component as *primary sensing / context sensing / user interaction / logging-communication / diagnostic-service*. Finalize it after M3.
-- [ ] Write acceptance criteria:
+- [x] Write a one-paragraph problem statement covering target user, problem, operating environment, and product goal.
+- [x] Describe at least 2 alternative ideas and why you chose the final one (use the table above).
+- [x] Define ≥3 classes with **operational definitions**: what physically happens, how to reproduce it, and how long it lasts. For anomaly detection instead, define *nominal* plus two safely simulated abnormal scenarios, and get instructor approval for anything hazardous.
+- [x] Draw the block diagram: Sense → Process (filter/window/features) → Infer locally → Act → Record/transmit.
+- [x] Draft the component-to-function matrix (preliminary). Tag every component as *primary sensing / context sensing / user interaction / logging-communication / diagnostic-service*. Finalize it after M3.
+- [x] Write acceptance criteria:
   - expected behavior per class
   - which errors matter most (e.g., a missed `ROUGH` is worse than a false one)
   - measurement plan
   - privacy, accessibility, and safety risks
-- [ ] Check the primary function uses **≥2 distinct sensing modalities**, **≥1 user input**, and **≥1 local output**.
+- [x] Check the primary function uses **≥2 distinct sensing modalities**, **≥1 user input**, and **≥1 local output**.
 
 **Evidence:** `docs/01-concept.md` and `docs/diagrams/block-diagram.(png|svg)`. Commit and tag `m1-concept`.
 
